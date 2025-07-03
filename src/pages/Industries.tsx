@@ -117,6 +117,102 @@ const Industries = () => {
         funding: '$15M Series A',
         employees: '40-55'
       }
+    ],
+    'healthtech': [
+      {
+        id: 'medai-scan',
+        name: 'MedAI Scan',
+        description: 'AI-powered medical imaging diagnostics',
+        score: 91,
+        funding: '$18M Series A',
+        employees: '55-70'
+      },
+      {
+        id: 'health-track',
+        name: 'HealthTrack Pro',
+        description: 'Wearable health monitoring platform',
+        score: 87,
+        funding: '$10M Seed',
+        employees: '30-45'
+      },
+      {
+        id: 'tele-cure',
+        name: 'TeleCure',
+        description: 'Remote patient monitoring system',
+        score: 83,
+        funding: '$7M Seed',
+        employees: '25-35'
+      }
+    ],
+    'cleantech': [
+      {
+        id: 'solar-grid',
+        name: 'SolarGrid',
+        description: 'Smart solar energy management',
+        score: 89,
+        funding: '$22M Series B',
+        employees: '65-80'
+      },
+      {
+        id: 'carbon-cap',
+        name: 'CarbonCap',
+        description: 'Industrial carbon capture technology',
+        score: 94,
+        funding: '$35M Series C',
+        employees: '90-110'
+      },
+      {
+        id: 'wind-smart',
+        name: 'WindSmart',
+        description: 'AI-optimized wind turbine systems',
+        score: 86,
+        funding: '$14M Series A',
+        employees: '40-55'
+      }
+    ],
+    'edtech': [
+      {
+        id: 'learn-ai',
+        name: 'LearnAI',
+        description: 'Personalized AI tutoring platform',
+        score: 88,
+        funding: '$16M Series A',
+        employees: '50-65'
+      },
+      {
+        id: 'skill-bridge',
+        name: 'SkillBridge',
+        description: 'Corporate training and upskilling',
+        score: 82,
+        funding: '$9M Seed',
+        employees: '35-45'
+      },
+      {
+        id: 'virtual-lab',
+        name: 'VirtualLab',
+        description: 'Virtual science laboratory experiences',
+        score: 85,
+        funding: '$11M Series A',
+        employees: '25-40'
+      }
+    ],
+    'foodtech': [
+      {
+        id: 'crop-sense',
+        name: 'CropSense',
+        description: 'Smart agriculture monitoring',
+        score: 79,
+        funding: '$6M Seed',
+        employees: '20-30'
+      },
+      {
+        id: 'plant-protein',
+        name: 'PlantProtein Co',
+        description: 'Alternative protein development',
+        score: 81,
+        funding: '$13M Series A',
+        employees: '45-60'
+      }
     ]
   };
 
