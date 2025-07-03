@@ -15,7 +15,7 @@ const Index = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <BarChart3 className="h-8 w-8 text-indigo-600" />
-              <h1 className="text-xl font-bold text-gray-900">IndustryScope</h1>
+              <h1 className="text-xl font-bold text-gray-900">DealScoreNexus</h1>
             </div>
             <div className="flex space-x-4">
               <Link to="/industries">
@@ -39,8 +39,8 @@ const Index = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
         <div className="text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Industry Intelligence
-            <span className="text-indigo-600"> Engine</span>
+            Deal Intelligence
+            <span className="text-indigo-600"> Platform</span>
           </h1>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
             Discover trending industries, analyze emerging startups, and evaluate pitch decks with AI-powered insights

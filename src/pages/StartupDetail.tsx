@@ -67,7 +67,7 @@ const StartupDetail = () => {
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-2">
               <TrendingUp className="h-8 w-8 text-indigo-600" />
-              <h1 className="text-xl font-bold text-gray-900">IndustryScope</h1>
+              <h1 className="text-xl font-bold text-gray-900">DealScoreNexus</h1>
             </Link>
             <div className="flex space-x-4">
               <Link to="/industries">
