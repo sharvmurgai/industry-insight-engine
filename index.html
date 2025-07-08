@@ -1,24 +1,174 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DealSource Nexus</title>
-    <!-- <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DealScoreNexus - Deal Intelligence Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        indigo: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <!-- Navigation Header -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <svg class="h-8 w-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                    <h1 class="text-xl font-bold text-gray-900">DealScoreNexus</h1>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="industries.html" class="flex items-center space-x-2 px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                        <span>Industries</span>
+                    </a>
+                    <a href="pitch-analyzer.html" class="flex items-center space-x-2 px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <span>Pitch Analyzer</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <meta property="og:title" content="industry-insight-engine" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Hero Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6">
+                Deal Intelligence
+                <span class="text-indigo-600"> Platform</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                Discover trending industries, analyze emerging startups, and evaluate pitch decks with AI-powered insights
+            </p>
+        </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" /> -->
-  </head>
+        <!-- Feature Cards -->
+        <div class="grid md:grid-cols-2 gap-8 mt-16">
+            <a href="industries.html" class="block">
+                <div class="h-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border-0 bg-white/70 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-center pb-4">
+                        <div class="mx-auto w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4">
+                            <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Industry Trends</h2>
+                        <p class="text-gray-600 mb-4">
+                            Explore trending industries with comprehensive market analysis
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-center space-x-4 text-sm text-gray-600">
+                                <div class="flex items-center space-x-1">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                    </svg>
+                                    <span>Market Stats</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                                    </svg>
+                                    <span>Emerging Startups</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <span>AI Scoring</span>
+                                </div>
+                            </div>
+                            <span class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm">
+                                Real-time Analysis
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+            <a href="pitch-analyzer.html" class="block">
+                <div class="h-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border-0 bg-white/70 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-center pb-4">
+                        <div class="mx-auto w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-4">
+                            <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Pitch Deck Analyzer</h2>
+                        <p class="text-gray-600 mb-4">
+                            Upload and analyze pitch decks with AI-powered scoring
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-center space-x-4 text-sm text-gray-600">
+                                <div class="flex items-center space-x-1">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                    </svg>
+                                    <span>Upload Decks</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <span>AI Scoring</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                    </svg>
+                                    <span>Insights</span>
+                                </div>
+                            </div>
+                            <span class="inline-block bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full text-sm">
+                                Instant Feedback
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <div class="text-3xl font-bold text-indigo-600 mb-2">500+</div>
+                <div class="text-gray-600">Industries Tracked</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-indigo-600 mb-2">10k+</div>
+                <div class="text-gray-600">Startups Analyzed</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-indigo-600 mb-2">95%</div>
+                <div class="text-gray-600">Accuracy Rate</div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

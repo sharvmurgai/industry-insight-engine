@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries - DealScoreNexus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        indigo: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <svg class="h-8 w-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                    </svg>
+                    <h1 class="text-xl font-bold text-gray-900">DealScoreNexus</h1>
+                </a>
+                <div class="flex space-x-4">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md">
+                        Industries
+                    </button>
+                    <a href="pitch-analyzer.html" class="px-4 py-2 text-gray-600 hover:text-gray-900">Pitch Analyzer</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Trending Industries</h1>
+            <p class="text-xl text-gray-600">Discover the fastest-growing industries and emerging opportunities</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Industries List -->
+            <div class="lg:col-span-1 space-y-4" id="industries-list">
+                <!-- Industry cards will be populated by JavaScript -->
+            </div>
+
+            <!-- Industry Details -->
+            <div class="lg:col-span-2" id="industry-details">
+                <div class="bg-white rounded-lg p-8 h-96 flex items-center justify-center">
+                    <div class="text-center text-gray-500">
+                        <svg class="h-12 w-12 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                        <p>Select an industry to view detailed insights</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const industries = [
+            {
+                id: 'ai-ml',
+                name: 'AI & Machine Learning',
+                growth: '+45%',
+                marketSize: '$390B',
+                score: 94,
+                description: 'Artificial intelligence and machine learning technologies',
+                color: 'from-blue-500 to-indigo-600'
+            },
+            {
+                id: 'fintech',
+                name: 'FinTech',
+                growth: '+32%',
+                marketSize: '$280B',
+                score: 89,
+                description: 'Financial technology and digital banking solutions',
+                color: 'from-emerald-500 to-teal-600'
+            },
+            {
+                id: 'healthtech',
+                name: 'HealthTech',
+                growth: '+28%',
+                marketSize: '$220B',
+                score: 87,
+                description: 'Digital health and medical technology',
+                color: 'from-rose-500 to-pink-600'
+            },
+            {
+                id: 'cleantech',
+                name: 'CleanTech',
+                growth: '+38%',
+                marketSize: '$180B',
+                score: 91,
+                description: 'Clean energy and environmental technology',
+                color: 'from-green-500 to-emerald-600'
+            },
+            {
+                id: 'edtech',
+                name: 'EdTech',
+                growth: '+25%',
+                marketSize: '$89B',
+                score: 82,
+                description: 'Educational technology and e-learning platforms',
+                color: 'from-purple-500 to-violet-600'
+            },
+            {
+                id: 'foodtech',
+                name: 'FoodTech',
+                growth: '+22%',
+                marketSize: '$67B',
+                score: 78,
+                description: 'Food technology and agricultural innovation',
+                color: 'from-orange-500 to-amber-600'
+            }
+        ];
+
+        const startups = {
+            'ai-ml': [
+                { name: 'Neural Dynamics', description: 'Advanced neural network optimization', score: 92, funding: '$12M Series A', employees: '45-60' },
+                { name: 'Quantum AI Labs', description: 'Quantum computing for AI acceleration', score: 89, funding: '$8M Seed', employees: '20-35' },
+                { name: 'VisionPro AI', description: 'Computer vision for autonomous systems', score: 85, funding: '$5M Seed', employees: '15-25' }
+            ],
+            'fintech': [
+                { name: 'PaySwift', description: 'Instant cross-border payments', score: 88, funding: '$25M Series B', employees: '80-100' },
+                { name: 'CreditWise', description: 'AI-powered credit scoring', score: 84, funding: '$15M Series A', employees: '40-55' }
+            ],
+            'healthtech': [
+                { name: 'MedAI Scan', description: 'AI-powered medical imaging diagnostics', score: 91, funding: '$18M Series A', employees: '55-70' },
+                { name: 'HealthTrack Pro', description: 'Wearable health monitoring platform', score: 87, funding: '$10M Seed', employees: '30-45' },
+                { name: 'TeleCure', description: 'Remote patient monitoring system', score: 83, funding: '$7M Seed', employees: '25-35' }
+            ],
+            'cleantech': [
+                { name: 'SolarGrid', description: 'Smart solar energy management', score: 89, funding: '$22M Series B', employees: '65-80' },
+                { name: 'CarbonCap', description: 'Industrial carbon capture technology', score: 94, funding: '$35M Series C', employees: '90-110' },
+                { name: 'WindSmart', description: 'AI-optimized wind turbine systems', score: 86, funding: '$14M Series A', employees: '40-55' }
+            ],
+            'edtech': [
+                { name: 'LearnAI', description: 'Personalized AI tutoring platform', score: 88, funding: '$16M Series A', employees: '50-65' },
+                { name: 'SkillBridge', description: 'Corporate training and upskilling', score: 82, funding: '$9M Seed', employees: '35-45' },
+                { name: 'VirtualLab', description: 'Virtual science laboratory experiences', score: 85, funding: '$11M Series A', employees: '25-40' }
+            ],
+            'foodtech': [
+                { name: 'CropSense', description: 'Smart agriculture monitoring', score: 79, funding: '$6M Seed', employees: '20-30' },
+                { name: 'PlantProtein Co', description: 'Alternative protein development', score: 81, funding: '$13M Series A', employees: '45-60' }
+            ]
+        };
+
+        let selectedIndustry = null;
+
+        function renderIndustries() {
+            const container = document.getElementById('industries-list');
+            container.innerHTML = industries.map(industry => `
+                <div class="cursor-pointer transition-all duration-300 hover:shadow-lg bg-white rounded-lg p-4 ${selectedIndustry === industry.id ? 'ring-2 ring-indigo-500 shadow-lg' : ''}" 
+                     onclick="selectIndustry('${industry.id}')">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-3 h-3 rounded-full bg-gradient-to-r ${industry.color}"></div>
+                        <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">${industry.growth}</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">${industry.name}</h3>
+                    <p class="text-gray-600 text-sm mb-4">${industry.description}</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">Market Size</span>
+                            <span class="font-semibold">${industry.marketSize}</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">Trend Score</span>
+                            <span class="font-semibold">${industry.score}/100</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-indigo-600 h-2 rounded-full" style="width: ${industry.score}%"></div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function selectIndustry(industryId) {
+            selectedIndustry = industryId;
+            renderIndustries();
+            renderIndustryDetails(industryId);
+        }
+
+        function renderIndustryDetails(industryId) {
+            const industry = industries.find(i => i.id === industryId);
+            const industryStartups = startups[industryId] || [];
+            
+            const detailsContainer = document.getElementById('industry-details');
+            detailsContainer.innerHTML = `
+                <div class="space-y-6">
+                    <!-- Market Stats -->
+                    <div class="bg-white rounded-lg p-6">
+                        <h2 class="text-xl font-bold mb-4 flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                            Market Statistics
+                        </h2>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-indigo-600 mb-1">${industry.marketSize}</div>
+                                <div class="text-sm text-gray-600">Market Size</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-green-600 mb-1">${industry.growth}</div>
+                                <div class="text-sm text-gray-600">YoY Growth</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-purple-600 mb-1">2.3k</div>
+                                <div class="text-sm text-gray-600">Active Startups</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-orange-600 mb-1">$45B</div>
+                                <div class="text-sm text-gray-600">Total Funding</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emerging Startups -->
+                    <div class="bg-white rounded-lg p-6">
+                        <h2 class="text-xl font-bold mb-4 flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                            </svg>
+                            Emerging Startups
+                        </h2>
+                        <div class="space-y-4">
+                            ${industryStartups.map(startup => `
+                                <a href="startup-detail.html?name=${encodeURIComponent(startup.name)}" class="block">
+                                    <div class="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                        <div class="flex-1">
+                                            <h3 class="font-semibold text-gray-900">${startup.name}</h3>
+                                            <p class="text-sm text-gray-600 mb-2">${startup.description}</p>
+                                            <div class="flex items-center space-x-4 text-xs text-gray-500">
+                                                <span class="flex items-center space-x-1">
+                                                    <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                                                    </svg>
+                                                    <span>${startup.funding}</span>
+                                                </span>
+                                                <span class="flex items-center space-x-1">
+                                                    <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                                                    </svg>
+                                                    <span>${startup.employees}</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <div class="text-right">
+                                                <div class="text-lg font-bold text-indigo-600">${startup.score}</div>
+                                                <div class="text-xs text-gray-500">Score</div>
+                                            </div>
+                                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize the page
+        renderIndustries();
+    </script>
+</body>
+</html>
